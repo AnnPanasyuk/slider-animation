@@ -1,0 +1,162 @@
+
+.register-slider{
+  margin: 88px 112px 0 0;
+
+  .slider{
+    position: relative;
+    width: 336px;
+    height: 354px;
+  }
+}
+
+.slider-card {
+  position: absolute;
+  padding: 56px 0 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.slide-card-scale div:nth-child(2) {
+  transform: scale(0);
+  animation: bubble 1s forwards;
+}
+.slide-card-scale div:nth-child(3) {
+  transform: scale(0);
+  animation: bubble 1.4s forwards;
+}
+
+div.slider-caption.body-text-one.slider-caption-0 {
+  transform: scale(1);
+  animation: none;
+}
+.slide-departure {
+  z-index: 5;
+  animation: leave-animation 1.5s linear alternate forwards;
+  offset-path: path('M0 0 C -200 -200, -400 -200, -800 -200');
+  offset-distance: 0%;
+}
+
+.slider-card-0 {
+  z-index: 3;
+}
+
+.slider-card-1 {
+  z-index: 1;
+  height: 286px;
+  right: -24px;
+  top: 34px;
+  background-color: rgba(255, 255, 255, .8);
+}
+
+.slider-card-2 {
+  height: 245px;
+  right: -40px;
+  top: 54px;
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.slider-card-3 {
+  opacity: 0;
+}
+
+.slider-caption {
+  transform: scale(1);
+}
+
+.slider-caption-0 {
+  width: 140px;
+  margin: 0 auto;
+}
+
+.slider-caption-3 {
+  width: 170px;
+  margin: 0 auto;
+}
+
+.slider-arrows {
+  padding-top: 32px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.slider-arrow {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .3s;
+  &:hover {
+    opacity: .7;
+  }
+}
+
+.leave-animation-slides {
+  z-index: 4;
+}
+
+.arrow-prev {
+  background-color: rgba(255, 255, 255, .1);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+  margin-right: 24px;
+}
+
+.arrow-next {
+  background: linear-gradient(135deg, #23AEA8 0%, #48DAD4 100%);
+  box-shadow: 0 4px 8px 0 rgba(42,183,176,0.5);
+}
+
+
+@keyframes leave-animation {
+  0% {
+    offset-distance: 0%;
+    transform: rotate(180deg);
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    offset-distance: 100%;
+  }
+  51% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    offset-path: path('M0 0');
+    z-index: 2;
+    position: absolute;
+    top: 177px;
+    left: 168px;
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 1);
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+  }
+}
+
+@keyframes bubble {
+  0% {
+    transform: scale(.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
