@@ -12,10 +12,10 @@ interface IRegisterSlideInterface {
 })
 export class AppComponent implements OnInit {
   public stateOfAnimation = false;
-  public slides: IRegisterSlideInterface[] = [
+  public viewSlides: IRegisterSlideInterface[] = [
     {
       icon: 'assets/images/slider_icons-1.svg',
-      caption: 'REGISTER_SLIDER.find_new_partners_and_friends',
+      caption: 'Find new partners and friends',
     },
     {
       icon: 'assets/images/slider_icons-2.svg',
@@ -30,10 +30,8 @@ export class AppComponent implements OnInit {
       caption: 'Use the most user-friendly interface',
     },
   ];
-  public viewSlides = [];
-  
+
   private movingSlide: IRegisterSlideInterface = null;
-  private newArr;
 
   constructor() { }
 

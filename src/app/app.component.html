@@ -1,32 +1,35 @@
-<div class="register-slider">
-  <div class="slider" *ngIf="viewSlides.length">
+<div class="slider-body">
+  <div class="register-slider">
+    <div class="slider" *ngIf="viewSlides.length">
 
-    <div class="slider-card leave-animation-slides"
-         *ngIf="stateOfAnimation"
-         [class.slide-departure]="stateOfAnimation">
-      <div class="slider-icons">
-        <img [src]="viewSlides[viewSlides.length - 1].icon" alt="">
-      </div>
-      <div class="slider-caption body-text-one slider-caption-0">
-        {{ viewSlides[viewSlides.length - 1].translatedCaption }}
-      </div>
-    </div>
-
-    <div class="slider-container slide-card-scale"
-         [class.slide-card-scale]="stateOfAnimation">
-      <div
-        class="slider-card"
-        *ngFor="let slide of viewSlides; let i = index"
-        [ngClass]="'slider-card-' + i" >
+      <div class="slider-card leave-animation-slides"
+           *ngIf="stateOfAnimation"
+           [class.slide-departure]="stateOfAnimation">
         <div class="slider-icons">
-          <img [src]="slide.icon" alt="">
+          <img [src]="viewSlides[viewSlides.length - 1].icon" alt="">
         </div>
-        <div class="slider-caption body-text-one"
-             [ngClass]="'slider-caption-' + i">
-          {{ slide.translatedCaption }}
+        <div class="slider-caption slider-caption-0">
+          {{ viewSlides[viewSlides.length - 1].caption }}
         </div>
       </div>
-    </div>
 
+      <div class="slider-container slide-card-scale"
+           [class.slide-card-scale]="stateOfAnimation">
+        <div
+          class="slider-card"
+          *ngFor="let slide of viewSlides; let i = index"
+          [ngClass]="'slider-card-' + i" >
+          <div class="slider-icons">
+            <img [src]="slide.icon" alt="">
+          </div>
+          <div class="slider-caption"
+               [ngClass]="'slider-caption-' + i">
+            {{ slide.caption }}
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
+
